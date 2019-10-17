@@ -13,11 +13,10 @@
 <!-- 		<constructor-arg value="Rodriguez"></constructor-arg> -->
 <!-- 	</bean> -->
 	
-	<bean id="persona" class="com.test.beans.Persona">
+	<bean id="persona" class="com.test.beans.Persona" autowire="byName">
 		<property name="id" value="1"></property>
 		<property name="nombre" value="Sebastian"></property>
 		<property name="apellido" value="Rodriguez"></property>
-		<property name="pais" ref="pais"></property>
 	</bean>
 
 	<bean id="pais" class="com.test.beans.Pais">
