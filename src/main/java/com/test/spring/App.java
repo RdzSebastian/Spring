@@ -20,7 +20,11 @@ public class App {
 		System.out.println(m.getSaludo());
 		
 		Persona p = (Persona) appContext.getBean("persona");
-		System.out.println(p.getId() + " " + p.getNombre() + " " + p.getApellido());
+		System.out.println(p.getId() + " " + 
+				p.getNombre() + " " + 
+				p.getApellido() + " " + 
+				p.getPais().getNombre() + " " + 
+				p.getPais().getCiudad().getNombre());
 
 		
 		((ConfigurableApplicationContext)appContext).close();
