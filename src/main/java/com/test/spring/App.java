@@ -7,18 +7,21 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.test.beans.AppConfig;
 import com.test.beans.Mundo;
+import com.test.beans.Persona;
 
 public class App {
 
 	public static void main(String[] args) {
 
-//		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/test/xml/beans.xml");
+		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/test/xml/beans.xml");
+//		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
-
 		Mundo m = (Mundo) appContext.getBean("mundo");
-		
 		System.out.println(m.getSaludo());
+		
+		Persona p = (Persona) appContext.getBean("persona");
+		System.out.println(p.getId() + " " + p.getNombre() + " " + p.getApellido());
+
 		
 		((ConfigurableApplicationContext)appContext).close();
 	}
