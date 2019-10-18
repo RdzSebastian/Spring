@@ -7,6 +7,15 @@ public class Persona {
 	String apellido;
 	Pais pais;
 	
+	private void init() {
+		System.out.println("Antes de iniciar el bean");
+	}
+	
+	private void destroy() {
+		System.out.println("Antes de destruir el bean");
+		
+	}
+	
 	public Persona(int id, String nombre, String apellido) {
 		super();
 		this.id = id;

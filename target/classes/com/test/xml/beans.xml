@@ -13,8 +13,14 @@
 <!-- 		<constructor-arg value="Rodriguez"></constructor-arg> -->
 <!-- 	</bean> -->
 	
-	<bean id="persona" class="com.test.beans.Persona" autowire="byName">
-		<property name="id" value="1"></property>
+<!--  	<bean id="persona" class="com.test.beans.Persona" autowire="byName" scope="singleton"> scope="prototype" -->
+<!-- 		<property name="id" value="1"></property> -->
+<!-- 		<property name="nombre" value="Sebastian"></property> -->
+<!-- 		<property name="apellido" value="Rodriguez"></property> -->
+<!-- 	</bean> -->
+
+
+ 	<bean id="persona" class="com.test.beans.Persona" autowire="byName" init-method="init" destroy-method="destroy">
 		<property name="nombre" value="Sebastian"></property>
 		<property name="apellido" value="Rodriguez"></property>
 	</bean>
