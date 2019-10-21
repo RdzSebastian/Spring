@@ -1,4 +1,4 @@
-package com.test.beans;
+package com.main.beans;
 
 import org.springframework.beans.factory.annotation.Value;
 

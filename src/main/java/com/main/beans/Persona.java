@@ -1,4 +1,4 @@
-package com.test.beans;
+package com.main.beans;
 
 public class Persona {
 

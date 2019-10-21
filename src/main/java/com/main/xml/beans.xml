@@ -3,35 +3,45 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="mundo" class="com.test.beans.Mundo">
+	<bean id="mundo" class="com.main.beans.Mundo">
 		<property name="saludo" value="Hola Mundo"></property>
 	</bean>
 	
-<!-- 	<bean id="persona" class="com.test.beans.Persona"> -->
+<!-- 	<bean id="persona" class="com.main.beans.Persona"> -->
 <!-- 		<constructor-arg value="1"></constructor-arg> -->
 <!-- 		<constructor-arg value="Sebastian"></constructor-arg> -->
 <!-- 		<constructor-arg value="Rodriguez"></constructor-arg> -->
 <!-- 	</bean> -->
 	
-<!--  	<bean id="persona" class="com.test.beans.Persona" autowire="byName" scope="singleton"> scope="prototype" -->
+<!--  	<bean id="persona" class="com.main.beans.Persona" autowire="byName" scope="singleton"> scope="prototype" -->
 <!-- 		<property name="id" value="1"></property> -->
 <!-- 		<property name="nombre" value="Sebastian"></property> -->
 <!-- 		<property name="apellido" value="Rodriguez"></property> -->
 <!-- 	</bean> -->
 
 
- 	<bean id="persona" class="com.test.beans.Persona" autowire="byName" init-method="init" destroy-method="destroy">
+ 	<bean id="persona" class="com.main.beans.Persona" autowire="byName" init-method="init" destroy-method="destroy">
 		<property name="nombre" value="Sebastian"></property>
 		<property name="apellido" value="Rodriguez"></property>
 	</bean>
 
-	<bean id="pais" class="com.test.beans.Pais">
+	<bean id="pais" class="com.main.beans.Pais">
 		<property name="nombre" value="Argentina"></property>
 		<property name="ciudad" ref="ciudad"></property>
 	</bean>
 	
-	<bean id="ciudad" class="com.test.beans.Ciudad">
+	<bean id="ciudad" class="com.main.beans.Ciudad">
 		<property name="nombre" value="Buenos Aires"></property>
 	</bean>
-
+	
+	 <bean id="messi" class="com.main.beans.Jugador">
+		<property name="numero" value="10"></property>
+		<property name="nombre" value="Lionel"></property>
+		<property name="equipo" ref="barcelona"></property>
+	</bean>
+	
+	<bean id="barcelona" class="com.main.beans.Barcelona"></bean>
+	<bean id="juventus" class="com.main.beans.Juventus"></bean>
+	
+	
 </beans>
