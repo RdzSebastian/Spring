@@ -43,5 +43,6 @@
 	<bean id="barcelona" class="com.main.beans.Barcelona"></bean>
 	<bean id="juventus" class="com.main.beans.Juventus"></bean>
 	
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
 	
 </beans>
