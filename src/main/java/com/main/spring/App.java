@@ -14,29 +14,17 @@ public class App {
 	public static void main(String[] args) {
 
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/main/xml/beans.xml");
-//		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
-		
-		Mundo m = (Mundo) appContext.getBean("mundo");
-		System.out.println(m.getSaludo());
-		
-		Persona p = (Persona) appContext.getBean("persona");
-		System.out.println(p.getId() + " " + 
-				p.getNombre() + " " + 
-				p.getApellido() + " " + 
-				p.getPais().getNombre() + " " + 
-				p.getPais().getCiudad().getNombre());
-
 		
 //		----------------------------- Utilizacion de Interfaces --------------------------------
 		
 		Jugador j = (Jugador) appContext.getBean("messi");
 		System.out.println(j.getNombre() + " - " + j.getNumero() + " - " + j.getEquipo().mostrar());
 		
-		IEquipo e = (IEquipo) appContext.getBean("barcelona");
-		System.out.println(e.mostrar());
-
-		e = (IEquipo) appContext.getBean("juventus");
-		System.out.println(e.mostrar());
+//		IEquipo e = (IEquipo) appContext.getBean("barcelona");
+//		System.out.println(e.mostrar());
+//
+//		e = (IEquipo) appContext.getBean("juventus");
+//		System.out.println(e.mostrar());
 		
 		((ConfigurableApplicationContext)appContext).close();
 	}
