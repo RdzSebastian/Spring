@@ -5,9 +5,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.main.beans.Jugador;
-import com.main.beans.Mundo;
-import com.main.beans.Persona;
-import com.main.interfaces.IEquipo;
 
 public class App {
 
@@ -17,8 +14,10 @@ public class App {
 		
 //		----------------------------- Utilizacion de Interfaces --------------------------------
 		
-		Jugador j = (Jugador) appContext.getBean("jugador");
-		System.out.println(j.getNombre() + " - " + j.getNumero() + " - " + j.getEquipo().mostrar());
+		Jugador j = (Jugador) appContext.getBean("jugador1");
+		
+		System.out.println(j.getNombre() + " - " + j.getId() + " - " + j.getEquipo().mostrar() + " - " + j.getCamiseta().getNumero()
+				+  " - " + j.getCamiseta().getMarca().getNombre());
 		
 		((ConfigurableApplicationContext)appContext).close();
 	}
