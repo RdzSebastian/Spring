@@ -1,15 +1,21 @@
-package com.example;
+package com.spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.spring.service.IPersonaService;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner{
 
 	private static Logger LOG = LoggerFactory.getLogger(Application.class);
+	
+	@Autowired
+	private IPersonaService service;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -17,7 +23,8 @@ public class Application implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+//		service = new PersonaService();
 		LOG.info("El servidor esta listo para trabajar");
-		
+		service.registar("messi");
 	}
 }
