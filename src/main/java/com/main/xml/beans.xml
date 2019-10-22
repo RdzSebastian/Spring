@@ -10,24 +10,6 @@
 	<bean id="jugador1" class="com.main.beans.Jugador">
 		<property name="id" value="1"></property>
 		<property name="nombre" value="messi"></property>
-		<property name="equipo" ref="barcelona"></property>
-		<property name="camiseta" ref="camiseta1"></property>
 	</bean>
-	
-	<bean id="barcelona" class="com.main.beans.Barcelona"></bean>
-	
-	<bean id="juventus" class="com.main.beans.Juventus"></bean>
-	
-	<bean id="camiseta1" class="com.main.beans.Camiseta">
-		<property name="id" value="1"></property>
-		<property name="numero" value="10"></property>
-		<property name="marca" ref="marca1"></property>
-	</bean>
-	
-	<bean id="marca1" class="com.main.beans.Marca">
-		<property name="id" value="1"></property>
-		<property name="nombre" value="Adidas"></property>
-	</bean>
-	
 	
 </beans>
