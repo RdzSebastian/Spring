@@ -17,14 +17,8 @@ public class App {
 		
 //		----------------------------- Utilizacion de Interfaces --------------------------------
 		
-		Jugador j = (Jugador) appContext.getBean("messi");
+		Jugador j = (Jugador) appContext.getBean("jugador");
 		System.out.println(j.getNombre() + " - " + j.getNumero() + " - " + j.getEquipo().mostrar());
-		
-//		IEquipo e = (IEquipo) appContext.getBean("barcelona");
-//		System.out.println(e.mostrar());
-//
-//		e = (IEquipo) appContext.getBean("juventus");
-//		System.out.println(e.mostrar());
 		
 		((ConfigurableApplicationContext)appContext).close();
 	}

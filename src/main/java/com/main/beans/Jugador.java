@@ -1,20 +1,20 @@
 package com.main.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.main.interfaces.IEquipo;
 
-@Component
+@Component //@Service @Controller @Repository
 public class Jugador {
 
 	private int numero;
+	
+	@Value("messi")
 	private String nombre;
 	
 	@Autowired
-	@Qualifier("barcelonaQualifier")
 	private IEquipo equipo;
 	
 	
@@ -30,7 +30,6 @@ public class Jugador {
 		return nombre;
 	}
 	
-	@Required
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
