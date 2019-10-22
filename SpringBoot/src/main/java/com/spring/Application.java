@@ -23,7 +23,6 @@ public class Application implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-//		service = new PersonaService();
 		LOG.info("El servidor esta listo para trabajar");
 		service.registar("messi");
 	}

@@ -14,7 +14,5 @@ public class PersonaRepo implements IPersonaRepo{
 	@Override
 	public void registrar(String nombre) {
 		LOG.info("Se registro a " + nombre);
-		
 	}
-
 }
