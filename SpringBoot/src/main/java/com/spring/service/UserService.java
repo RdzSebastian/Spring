@@ -20,16 +20,15 @@ public class UserService implements UserDetailsService{
 
 	@Autowired
 	private IUsuarioRepo repo;
-	
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Usuario us = repo.findByNombre(username);
-		
+
 		List<GrantedAuthority> roles = new ArrayList<>();
 		roles.add(new SimpleGrantedAuthority("ADMIN"));
-		
+
 		UserDetails userDetails = new User(us.getNombre(), us.getClave(), roles);
 		return userDetails;
 	}
-
 }
